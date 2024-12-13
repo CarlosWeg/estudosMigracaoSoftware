@@ -1,3 +1,10 @@
+SELECT * FROM treina.tblogradouro
+SELECT * FROM treina.tbpessoa
+SELECT * FROM treina.tbpessoaimovel
+SELECT * FROM treina.tbimovel
+SELECT * FROM treina.tbpessoacontato
+SELECT * FROM treina.tbtaxa
+
 -- Liste os nomes das pessoas que possuem imóveis. Para cada pessoa,
 -- exiba a quantidade de imóveis que ela possui e a soma das
 -- taxas associadas. Ordene os resultados pela soma das taxas em
@@ -93,3 +100,5 @@ SELECT l.logdescricao,
  INNER JOIN treina.tbimovel i ON l.logcodigo = i.logcodigo
  INNER JOIN treina.tbtaxa t ON t.imvcodigo = i.imvcodigo
  GROUP BY l.logdescricao,l.logtipo
+
+
