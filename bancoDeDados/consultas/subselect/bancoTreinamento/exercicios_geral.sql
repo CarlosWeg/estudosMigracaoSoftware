@@ -18,7 +18,7 @@ SELECT pc.ctpnumero
                          FROM treina.tbpessoaimovel pi
                         INNER JOIN treina.tbimovel i ON pi.imvcodigo = i.imvcodigo
                         GROUP BY pi.pescodigo
-                       HAVING SUM(i.imvcodigo) >1)
+                       HAVING COUNT(i.imvcodigo) >1)
 
 -- Liste a descrição dos imóveis que possuem taxas com valores
 -- acima da média de todas as taxas registradas.
