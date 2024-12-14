@@ -1,10 +1,3 @@
-SELECT * FROM treina.tblogradouro
-SELECT * FROM treina.tbpessoa
-SELECT * FROM treina.tbpessoaimovel
-SELECT * FROM treina.tbimovel
-SELECT * FROM treina.tbpessoacontato
-SELECT * FROM treina.tbtaxa
-
 -- Liste os nomes das pessoas que possuem imóveis localizados no
 -- logradouro com a descrição "UM".
 
@@ -95,4 +88,84 @@ SELECT l.logdescricao
 							                                FROM treina.tbimovel i
 								                           GROUP BY i.logcodigo)))
 
+-- Liste os nomes das pessoas que têm pelo menos uma taxa registrada
+-- cujo valor é maior que a maior taxa de qualquer outro proprietário
+-- de imóveis.
 
+
+SELECT p.pesnome
+  FROM treina.tbpessoa p
+ WHERE p.pescodigo IN (SELECT t2.pescodigo
+                         FROM treina.tbtaxa t2
+                        WHERE t2.taxvalor> (SELECT MAX(taxvalor)
+                                              FROM treina.tbtaxa t3
+                                             WHERE t3.pescodigo <> t2.pescodigo))
+
+-- Liste os nomes dos proprietários que possuem imóveis localizados
+-- na "RUA UM" mas não possuem nenhum contato registrado.
+
+
+SELECT pesnome
+  FROM treina.tbpessoa
+ WHERE pescodigo NOT IN (SELECT pescodigo
+                           FROM treina.tbpessoacontato)
+                            AND pescodigo IN (SELECT pescodigo
+                                               FROM treina.tbpessoaimovel
+                                              WHERE imvcodigo IN (SELECT imvcodigo
+                                                                    FROM treina.tbimovel
+                                                                   WHERE logcodigo IN (SELECT logcodigo
+                                                                                         FROM treina.tblogradouro
+                                                                                        WHERE logtipo = 'RUA'
+                                                                                          AND logdescricao = 'UM')))
+																						  
+-- Liste os imóveis (nomes e descrições) localizados em ruas cujo tipo
+-- de logradouro só aparece uma única vez no banco de dados.
+
+SELECT imvdescricao
+  FROM treina.tbimovel
+ WHERE imvcodigo IN(SELECT imvcodigo
+                      FROM treina.tbimovel
+                     WHERE logcodigo IN(SELECT logcodigo
+                                          FROM treina.tblogradouro
+                                         WHERE logtipo = (SELECT logtipo
+                                                            FROM treina.tblogradouro
+                                                           GROUP BY logtipo
+                                                          HAVING COUNT(logtipo) = 1)))
+
+-- Liste os imóveis (nomes e descrições) cujas taxas estão abaixo da
+-- média das taxas registradas para o mesmo proprietário.
+
+SELECT imvdescricao
+  FROM treina.tbimovel
+ WHERE imvcodigo IN(SELECT imvcodigo
+                      FROM treina.tbtaxa t
+                     WHERE t.taxvalor< (SELECT AVG(taxvalor)
+                                          FROM treina.tbtaxa
+                                         WHERE pescodigo = t.pescodigo))
+
+-- Liste os nomes das pessoas que possuem todos os seus imóveis
+-- registrados exclusivamente na "RUA DOIS".
+
+SELECT pesnome
+  FROM treina.tbpessoa
+ WHERE pescodigo IN (SELECT pescodigo
+                       FROM treina.tbpessoaimovel
+                      WHERE imvcodigo IN (SELECT imvcodigo
+                                            FROM treina.tbimovel
+                                           WHERE logcodigo IN(SELECT logcodigo
+                                                                FROM treina.tblogradouro
+                                                               WHERE logtipo = 'RUA'
+                                                                 AND logdescricao = 'DOIS')))
+
+-- Liste os imóveis (nomes e descrições) que não têm nenhuma taxa
+-- registrada igual ao valor da maior taxa do mesmo logradouro.
+
+SELECT i.imvdescricao
+  FROM treina.tbimovel I
+ WHERE i.imvcodigo NOT IN (SELECT imvcodigo
+                             FROM treina.tbtaxa
+                            WHERE taxvalor = (SELECT MAX(taxvalor)
+                                                FROM treina.tbtaxa
+                                               WHERE imvcodigo IN (SELECT imvcodigo
+                                                                     FROM treina.tbimovel
+					                                                WHERE logcodigo = i.logcodigo)))
