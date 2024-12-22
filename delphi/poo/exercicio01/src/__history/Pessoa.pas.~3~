@@ -1,0 +1,13 @@
+unit Pessoa;
+
+interface
+
+  type T
+    TPessoa = class
+    Nome: string;
+    Telefone: string;
+  end;
+
+implementation
+
+end.

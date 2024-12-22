@@ -1,0 +1,39 @@
+unit Principal;
+
+interface
+
+  type TPessoa = class
+    Nome: string;
+    Telefone: string;
+  end;
+
+  type TCliente = class (TPessoa)
+    CNPJ: string;
+    RazaoSocial: string;
+  end;
+
+  type TUsuario = class(TPessoa)
+    NomeAcesso: string;
+    Senha: string;
+  end;
+
+  type TAdministrador = class (TUsuario)
+    procedure excluir();
+    procedure inserir();
+  end;
+
+implementation
+
+{ TAdministrador }
+
+procedure TAdministrador.excluir;
+begin
+
+end;
+
+procedure TAdministrador.inserir;
+begin
+
+end;
+
+end.
