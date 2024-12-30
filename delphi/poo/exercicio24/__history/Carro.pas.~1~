@@ -1,0 +1,10 @@
+unit Carro;
+
+interface
+
+uses
+  Veiculo;
+
+implementation
+
+end.

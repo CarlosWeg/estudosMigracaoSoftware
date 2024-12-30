@@ -1,0 +1,14 @@
+unit ClienteFisica;
+
+interface
+
+uses
+  Cliente;
+
+type
+  TClienteFisica = class (TCliente);
+
+
+implementation
+
+end.

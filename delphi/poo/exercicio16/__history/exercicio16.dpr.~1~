@@ -1,0 +1,23 @@
+program exercicio16;
+
+//Crie uma classe base chamada TVeiculo com os métodos Acelerar e Frear.
+//Em seguida, crie duas classes derivadas, TCarro e TMoto, que implementem mensagens específicas para cada método.
+
+{$APPTYPE CONSOLE}
+
+{$R *.res}
+
+uses
+  System.SysUtils,
+  Veiculo in 'Veiculo.pas',
+  Carro in 'Carro.pas',
+  Moto in 'Moto.pas';
+
+begin
+  try
+    { TODO -oUser -cConsole Main : Insert code here }
+  except
+    on E: Exception do
+      Writeln(E.ClassName, ': ', E.Message);
+  end;
+end.

@@ -1,0 +1,19 @@
+unit Moto;
+
+interface
+
+uses
+  Veiculo;
+
+type
+  TMoto = class(TVeiculo)
+    private
+      FTemCarenagem : boolean;
+    public
+      constructor Create(AMarca , AModelo : string ; AAno : integer ; ATemCarenagem : boolean);
+      ExibirDetalhes ; override;
+  end;
+
+implementation
+
+end.

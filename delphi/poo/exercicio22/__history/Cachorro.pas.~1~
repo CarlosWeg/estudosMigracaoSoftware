@@ -1,0 +1,16 @@
+unit Cachorro;
+
+interface
+
+uses
+  Animal;
+
+type
+  TCachorro = class(TAnimal)
+
+
+  end;
+
+implementation
+
+end.

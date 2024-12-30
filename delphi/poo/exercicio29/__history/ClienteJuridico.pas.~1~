@@ -1,0 +1,13 @@
+unit ClienteJuridico;
+
+interface
+
+type
+  TClienteJuriridico = class(TCliente)
+    private
+      CNPJ : string;
+  end;
+
+implementation
+
+end.

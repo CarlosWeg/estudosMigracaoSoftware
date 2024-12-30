@@ -1,0 +1,13 @@
+unit Circulo;
+
+interface
+
+type
+  TCirculo = class (TForma)
+    public
+
+  end;
+
+implementation
+
+end.

@@ -1,0 +1,28 @@
+unit ClienteFisica;
+
+interface
+
+uses
+  Cliente;
+
+type
+  TClienteFisica = class(TCliente)
+    private
+      FCPF : string;
+    public
+      procedure Exibir;
+
+  end;
+
+implementation
+
+
+{ TClienteFisica }
+
+procedure TClienteFisica.Exibir;
+begin
+  inherited Exibir;
+  writeln(' | CPF ' , FCPF);
+end;
+
+end.

@@ -1,0 +1,20 @@
+unit Moto;
+
+interface
+
+type
+  TMoto = class
+    public
+      procedure Acelarar;
+  end;
+
+implementation
+
+{ TMoto }
+
+procedure TMoto.Acelarar;
+begin
+  writeln('Acelerado minha moto!');
+end;
+
+end.

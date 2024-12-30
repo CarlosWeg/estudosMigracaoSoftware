@@ -1,0 +1,17 @@
+unit Moto;
+
+interface
+
+uses
+  Veiculo;
+
+type
+  TMoto = class
+    private
+      FTemCarenagem : boolean;
+    public
+  end;
+
+implementation
+
+end.

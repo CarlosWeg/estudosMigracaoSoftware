@@ -1,0 +1,24 @@
+unit Veiculo;
+
+interface
+
+type
+  TVeiculo = class
+    private
+      FCor : string;
+    public
+      procedure mover ; virtual ;
+  end;
+
+implementation
+
+{ TVeiculo }
+
+procedure TVeiculo.mover;
+begin
+
+  writeln('O veículo está se movendo!');
+
+end;
+
+end.

@@ -1,0 +1,15 @@
+unit Administrador;
+
+interface
+
+uses
+  Usuario;
+
+type
+  TAdministrador = class(TUsuario)
+
+  end;
+
+implementation
+
+end.

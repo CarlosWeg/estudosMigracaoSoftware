@@ -1,0 +1,13 @@
+unit Carro;
+
+interface
+
+uses
+  Veiculo;
+
+implementation
+
+type
+  TCarro = class(TVeiculo);
+
+end.

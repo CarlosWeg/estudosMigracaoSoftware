@@ -1,0 +1,25 @@
+unit Gerente;
+
+interface
+
+uses
+  Empregado;
+
+type
+  TGerente = class(TEmpregado)
+    public
+      function obterSalario(ASalario,ABonus : double) : double ;
+  end;
+
+implementation
+
+{ TGerente }
+
+function TGerente.obterSalario(ASalario,ABonus : double) : double;
+begin
+
+
+
+end;
+
+end.

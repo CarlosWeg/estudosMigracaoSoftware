@@ -1,0 +1,20 @@
+program exercicio14;
+
+{$APPTYPE CONSOLE}
+
+{$R *.res}
+
+uses
+  System.SysUtils,
+  Somar in 'Somar.pas';
+
+var
+  CalculoSoma : TSomar;
+
+begin
+
+  CalculoSoma.Somar(1,2) ;
+  CalculoSoma.Somar(22.5,21.2);
+  CalculoSoma.Somar(2,3,1);
+
+end.

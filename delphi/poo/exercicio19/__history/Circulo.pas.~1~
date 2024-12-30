@@ -1,0 +1,21 @@
+unit Circulo;
+
+interface
+
+uses
+  Forma;
+
+type
+  TCirculo = class(TForma)
+    private
+      FRaio : double;
+      FComprimento : double;
+    public
+      Constructor Create (ACor : string ; AArea : double ; ARaio : double) : double ; override;
+      function CalcularArea(ARaio : double) : double ; override;
+      function CalcularPerimetro(AComprimento : double) : double ; override;
+  end;
+
+implementation
+
+end.

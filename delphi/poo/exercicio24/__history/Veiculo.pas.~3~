@@ -1,0 +1,30 @@
+unit Veiculo;
+
+interface
+
+type
+  TVeiculo = class
+    private
+      FCor : string;
+    public
+      constructor Create(ACor : string);
+      procedure Mover ; virtual ;
+  end;
+
+implementation
+
+{ TVeiculo }
+
+constructor TVeiculo.Create(ACor: string);
+begin
+  FCor := ACor;
+end;
+
+procedure TVeiculo.mover;
+begin
+
+  writeln('O veículo está se movendo!');
+
+end;
+
+end.

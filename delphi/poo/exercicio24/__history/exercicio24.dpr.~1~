@@ -1,0 +1,21 @@
+program exercicio24;
+
+//Crie uma classe base chamada TVeiculo com um método virtual Mover. Derive duas classes, TCarro e TMoto, que sobrescrevam o método Mover.
+//Crie uma lista de veículos e demonstre o uso do polimorfismo para chamar o método Mover de cada veículo.
+
+{$APPTYPE CONSOLE}
+{$R *.res}
+
+uses
+  System.SysUtils,
+  Veiculo in 'Veiculo.pas',
+  Carro in 'Carro.pas';
+
+begin
+  try
+    { TODO -oUser -cConsole Main : Insert code here }
+  except
+    on E: Exception do
+      Writeln(E.ClassName, ': ', E.Message);
+  end;
+end.

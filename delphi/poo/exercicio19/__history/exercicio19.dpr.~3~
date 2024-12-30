@@ -1,0 +1,36 @@
+program exercicio19;
+
+// Crie uma hierarquia de formas geométricas com cálculo de área e perímetro.
+// Implemente validações para garantir que as dimensões sejam positivas.
+
+{$APPTYPE CONSOLE}
+
+{$R *.res}
+
+uses
+  System.SysUtils,
+  Forma in 'Forma.pas',
+  Quadrado in 'Quadrado.pas',
+  Circulo in 'Circulo.pas';
+
+var
+  Circulo : TCirculo;
+  Quadrado : TQuadrado;
+
+begin
+
+  try
+    Quadrado := TQuadrado.Create('Vermelho',5);
+    Circulo := TCirculo.Create('Verde',3);
+    writeln('Área do quadrado : ' , Quadrado.CalcularArea);
+    writeln('Perímetro do quadrado : ' , Quadrado.CalcularPerimetro);
+    writeln('Área do círculo : ' , Circulo.CalcularArea);
+    writeln('Comprimento do círculo : ' , Circulo.CalcularPerimetro);
+  finally
+    Circulo.Free;
+    Quadrado.Free;
+  end;
+
+  readln;
+
+end.

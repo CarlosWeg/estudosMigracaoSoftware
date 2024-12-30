@@ -1,0 +1,30 @@
+program exercicio29;
+
+//Criar uma classe chamada Clientes
+
+//a) Crie um objeto da classe Clientes.
+//b) Atribua valores aos atributos da classe.
+//c) Crie mais um objeto da classe Clientes.
+//d) Chame o método exibir dos dois objetos e veja o resultado.
+//e) Crie uma classe chamada ClienteFisica que estenda a classe Clientes.
+//Adicione nesta classe o atributo $cpf;
+//f) Crie uma classe chamada ClienteJuridica que estenda a classe Clientes.
+//Adicione nesta classe o atributo $cnpj;
+//g) Não esqueça de criar os setters e os getters em todas as classes.
+
+{$APPTYPE CONSOLE}
+
+{$R *.res}
+
+uses
+  System.SysUtils,
+  Cliente in 'Cliente.pas';
+
+begin
+  try
+    { TODO -oUser -cConsole Main : Insert code here }
+  except
+    on E: Exception do
+      Writeln(E.ClassName, ': ', E.Message);
+  end;
+end.

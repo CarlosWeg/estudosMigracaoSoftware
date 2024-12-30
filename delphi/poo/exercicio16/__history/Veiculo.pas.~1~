@@ -1,0 +1,13 @@
+unit Veiculo;
+
+interface
+
+type
+  TVeiculo = class
+    public
+      procedure Acelerar ; virtual; abstract;
+  end;
+
+implementation
+
+end.

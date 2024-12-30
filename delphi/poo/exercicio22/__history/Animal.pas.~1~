@@ -1,0 +1,31 @@
+unit Animal;
+
+interface
+
+type
+  TAnimal = class
+    private
+      FNome : string;
+      FIdade : integer;
+
+    public
+      procedure Comer;
+      procedure Dormir;
+
+  end;
+
+implementation
+
+{ TAnimal }
+
+procedure TAnimal.Comer;
+begin
+  writeln('O animal está comendo!');
+end;
+
+procedure TAnimal.Dormir;
+begin
+  writeln('O animal está dormindo!');
+end;
+
+end.

@@ -1,0 +1,25 @@
+program exercicio17;
+
+//Crie uma classe base chamada TEmpregado com os métodos Trabalhar e ObterSalario.
+//Em seguida, crie duas classes derivadas, TGerente e TEstagiario, que sobrescrevam o método ObterSalario
+//para calcular salários específicos.
+
+
+
+{$APPTYPE CONSOLE}
+
+{$R *.res}
+
+uses
+  System.SysUtils,
+  Empregado in 'Empregado.pas';
+
+begin
+
+  try
+
+  finally
+
+  end;
+
+end.

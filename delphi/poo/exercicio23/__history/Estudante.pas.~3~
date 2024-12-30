@@ -1,0 +1,29 @@
+unit Estudante;
+
+interface
+
+uses
+  Pessoa;
+
+type
+  TEstudante = class(TPessoa)
+    private
+      Curso : string;
+
+    public
+      procedure ExibirInformacoes ; override;
+
+  end;
+
+implementation
+
+{ TEstudante }
+
+procedure TEstudante.ExibirInformacoes;
+begin
+  inherited ExibirInformacoes;
+  writeln('Cuso do estudante : ' , Curso);
+
+end;
+
+end.

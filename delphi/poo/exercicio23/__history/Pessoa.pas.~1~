@@ -1,0 +1,23 @@
+unit Pessoa;
+
+interface
+
+type
+  TPessoa = class
+      private
+        FNome : string;
+        FIdade : integer;
+      public
+        procedure ExibirInformacoes;
+  end;
+
+implementation
+
+{ TPessoa }
+
+procedure TPessoa.ExibirInformacoes;
+begin
+  writeln('Nome: ' , FNome , ' | Idade: ' , FIdade);
+end;
+
+end.

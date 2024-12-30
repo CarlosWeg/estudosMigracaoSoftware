@@ -1,0 +1,25 @@
+unit Gerente;
+
+interface
+
+uses
+  Empregado;
+
+type
+  TGerente = class(TEmpregado)
+    public
+      function obterSalario : double ; override;
+  end;
+
+implementation
+
+{ TGerente }
+
+function TGerente.obterSalario: double;
+begin
+
+
+
+end;
+
+end.

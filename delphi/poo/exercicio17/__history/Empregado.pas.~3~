@@ -1,0 +1,22 @@
+unit Empregado;
+
+interface
+
+type
+  TEmpregado = class
+    public
+      procedure Trabalhar;
+      function ObterSalario : double ; virtual; abstract;
+  end;
+
+implementation
+
+{ TEmpregado }
+
+
+procedure TEmpregado.Trabalhar;
+begin
+  writeln('Empregado trabalhando!');
+end;
+
+end.

@@ -1,0 +1,19 @@
+program exercicio19;
+
+// Crie uma hierarquia de formas geométricas com cálculo de área e perímetro.
+// Implemente validações para garantir que as dimensões sejam positivas.
+
+{$APPTYPE CONSOLE}
+
+{$R *.res}
+
+uses
+  System.SysUtils,
+  Forma in 'Forma.pas',
+  Quadrado in 'Quadrado.pas',
+  Circulo in 'Circulo.pas';
+
+begin
+
+
+end.

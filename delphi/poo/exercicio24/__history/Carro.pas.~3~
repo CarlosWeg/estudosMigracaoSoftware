@@ -1,0 +1,23 @@
+unit Carro;
+
+interface
+
+uses
+  Veiculo;
+
+implementation
+
+type
+  TCarro = class(TVeiculo)
+    public
+      procedure Mover ; override;
+  end;
+
+{ TCarro }
+
+procedure TCarro.Mover;
+begin
+  writeln('O carro está se movendo!');
+end;
+
+end.

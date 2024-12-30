@@ -1,0 +1,27 @@
+unit Veiculo;
+
+interface
+
+type
+  TVeiculo = class
+    private
+      FMarca : string;
+      FModelo : string;
+      FAno : integer;
+    public
+      procedure ExibirDetalhes ; virtual;
+
+  end;
+
+implementation
+
+{ TVeiculo }
+
+procedure TVeiculo.ExibirDetalhes;
+begin
+
+  writeln('Marca : ' , FMarca , ' | Modelo : ' , FModelo , ' | Ano : ' , FAno);
+
+end;
+
+end.

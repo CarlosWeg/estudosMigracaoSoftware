@@ -1,0 +1,13 @@
+unit Forma;
+
+interface
+
+type TForma = class
+     public
+       function CalcularArea: double ; virtual; abstract;
+     end;
+
+
+implementation
+
+end.

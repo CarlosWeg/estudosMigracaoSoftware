@@ -1,0 +1,14 @@
+unit Quadrado;
+
+
+interface
+
+uses
+  Forma in 'Forma.pas';
+
+type TQuadrado = class(TForma)
+
+end;
+implementation
+
+end.

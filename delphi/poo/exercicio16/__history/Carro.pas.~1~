@@ -1,0 +1,20 @@
+unit Carro;
+
+interface
+
+type
+  TCarro = class
+    public
+      procedure Acelerar;
+  end;
+
+implementation
+
+{ TCarro }
+
+procedure TCarro.Acelerar;
+begin
+  writeln('Acelerando meu carro!');
+end;
+
+end.

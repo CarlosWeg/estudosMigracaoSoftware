@@ -1,0 +1,33 @@
+program exercicio15;
+
+//Crie uma classe base chamada TForma com um método chamado CalcularArea que retorna 0.
+//Em seguida, crie duas classes derivadas, TQuadrado e TCirculo.
+//Ambas devem sobrescrever o método CalcularArea para calcular suas respectivas áreas.
+
+
+{$APPTYPE CONSOLE}
+
+{$R *.res}
+
+uses
+  System.SysUtils,
+  Forma in 'Forma.pas',
+  Quadrado in 'Quadrado.pas',
+  Circulo in 'Circulo.pas';
+
+var
+  Quadrado : TQuadrado;
+  Circulo : TCirculo;
+
+begin
+  try
+    writeln('Área do quadrado : ',Quadrado.CalcularArea(5));
+    writeln('Área do círculo : ',Circulo.CalcularArea(2));
+  finally
+    Quadrado.Free;
+    Circulo.Free;
+  end;
+
+  readln;
+
+end.

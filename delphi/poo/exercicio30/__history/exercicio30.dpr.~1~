@@ -1,0 +1,29 @@
+program exercicio30;
+
+{$APPTYPE CONSOLE}
+
+{$R *.res}
+
+//Crie as seguintes classes:
+
+//Crie uma classe Administrador que estende a classe Usuario. Nesta,
+//defina o método hello(), que deverá imprimir: “Olá Administrador:
+//Matheus”. Esta classe não terá propriedades.
+
+//Crie uma classe Cliente que estende a classe Usuario. Também crie o
+//método hello(), que deverá imprimir o mesmo texto hello() da classe
+//Usuario e ainda adicionar o texto: “Seja bem vindo”. Esta classe não
+//terá propriedades.
+
+uses
+  System.SysUtils,
+  Usuario in 'Usuario.pas';
+
+begin
+  try
+    { TODO -oUser -cConsole Main : Insert code here }
+  except
+    on E: Exception do
+      Writeln(E.ClassName, ': ', E.Message);
+  end;
+end.

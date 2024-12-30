@@ -1,0 +1,32 @@
+unit Carro;
+
+interface
+
+uses
+  Veiculo;
+
+type
+  TCarro = class(TVeiculo)
+    private
+      FNumeroDePortas : integer;
+    function GetNumeroDePortas: integer;
+    procedure SetNumeroDePortas(const ANumeroDePortas: integer);
+    public
+      property NumeroDePortas : integer read GetNumeroDePortas write SetNumeroDePortas;
+  end;
+
+implementation
+
+{ TCarro }
+
+function TCarro.GetNumeroDePortas: integer;
+begin
+  Result := FNumeroDePortas;
+end;
+
+procedure TCarro.SetNumeroDePortas(const ANumeroDePortas: integer);
+begin
+  FNumeroDePortas := ANumeroDePortas;
+end;
+
+end.
