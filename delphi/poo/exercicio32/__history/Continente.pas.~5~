@@ -1,0 +1,90 @@
+unit Continente;
+
+interface
+
+uses
+  Pais;
+
+type TContinente = class
+      private
+        Fnome : string;
+        FListaPaises : array [1..10] of TPais;
+      public
+        constructor Create(ANome : string);
+        procedure AdicionarPais(APais : TPais);
+        function DimensaoTotal : real;
+        function PopulacaoTotal : real;
+        function DensidadePopulacional : real;
+        function PaisMaiorPopulacao : TPais;
+        function PaisMenorPopulacao : TPais;
+        function PaisMaiorDimensao : TPais;
+        function PaisMenorDimensao : TPais;
+        function DiferencaMenorMaiorPais : real;
+
+
+end;
+
+implementation
+
+{ TContinente }
+
+procedure TContinente.AdicionarPais(APais: TPais);
+var i : integer;
+begin
+
+  i:=1;
+
+  while (FListaPaises[i] <> 0) do
+    i:=i+1;
+
+  FListaPaises[i+1]:=APais;
+
+
+end;
+
+constructor TContinente.Create(ANome: string);
+begin
+
+end;
+
+function TContinente.DensidadePopulacional: real;
+begin
+
+end;
+
+function TContinente.DiferencaMenorMaiorPais: real;
+begin
+
+end;
+
+function TContinente.DimensaoTotal: real;
+begin
+
+end;
+
+function TContinente.PaisMaiorDimensao: TPais;
+begin
+
+end;
+
+function TContinente.PaisMaiorPopulacao: TPais;
+begin
+
+end;
+
+function TContinente.PaisMenorDimensao: TPais;
+begin
+
+end;
+
+function TContinente.PaisMenorPopulacao: TPais;
+begin
+
+end;
+
+function TContinente.PopulacaoTotal: real;
+begin
+
+end;
+
+end.

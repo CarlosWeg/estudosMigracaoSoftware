@@ -1,0 +1,35 @@
+program exercicio33;
+
+//Criar uma classe chamada ContaBancaria
+
+//Atributos:
+
+//Nome Cliente
+//Data de criação;
+//SaldoInicial;
+//SaldoAtual;
+//Operacoes: array de operacoes realizadas;
+
+//Métodos:
+
+//Sacar();
+//Depositar();
+//exibeSaldo();
+//exibeExtrato();
+
+{$APPTYPE CONSOLE}
+
+{$R *.res}
+
+uses
+  System.SysUtils,
+  ContaBancaria in 'ContaBancaria.pas';
+
+begin
+  try
+    { TODO -oUser -cConsole Main : Insert code here }
+  except
+    on E: Exception do
+      Writeln(E.ClassName, ': ', E.Message);
+  end;
+end.

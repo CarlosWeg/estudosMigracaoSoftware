@@ -1,0 +1,57 @@
+program exercicio32;
+
+{$APPTYPE CONSOLE}
+
+{$R *.res}
+
+uses
+  System.SysUtils,
+  Pais in '..\..\..\..\Downloads\estudosMigracaoSoftware\delphi\poo\exercicio32\Pais.pas',
+  Continente in '..\..\..\..\Downloads\estudosMigracaoSoftware\delphi\poo\exercicio32\Continente.pas';
+
+var
+  Brasil, Argentina, Chile: TPais;
+  AmericaDoSul: TContinente;
+begin
+  try
+    // Criação dos objetos TPais
+    Brasil := TPais.Create('BRA', 'Brasil', 8515767.049);
+    Brasil.Populacao := 193946886;
+
+    Argentina := TPais.Create('ARG', 'Argentina', 2780400);
+    Argentina.Populacao := 43131966;
+
+    Chile := TPais.Create('CHL', 'Chile', 756102);
+    Chile.Populacao := 19107216;
+
+    // Criação do objeto TContinente e adição dos países
+    AmericaDoSul := TContinente.Create('América do Sul');
+    AmericaDoSul.AdicionarPais(Brasil);
+    AmericaDoSul.AdicionarPais(Argentina);
+    AmericaDoSul.AdicionarPais(Chile);
+
+    // Exibição dos dados
+    Writeln('Continente: ', AmericaDoSul.Nome);
+    Writeln('Dimensão Total: ', AmericaDoSul.DimensaoTotal:0:2);
+    Writeln('População Total: ', AmericaDoSul.PopulacaoTotal:0:0);
+    Writeln('Densidade Populacional: ', AmericaDoSul.DensidadePopulacional:0:2);
+    Writeln('País com Maior População: ', AmericaDoSul.PaisMaiorPopulacao.Nome);
+    Writeln('País com Menor População: ', AmericaDoSul.PaisMenorPopulacao.Nome);
+    Writeln('País com Maior Dimensão: ', AmericaDoSul.PaisMaiorDimensao.Nome);
+    Writeln('País com Menor Dimensão: ', AmericaDoSul.PaisMenorDimensao.Nome);
+    Writeln('Diferença entre Menor e Maior País (Dimensão): ', AmericaDoSul.DiferencaMenorMaiorPais:0:2);
+
+  except
+    on E: Exception do
+      Writeln(E.ClassName, ': ', E.Message);
+  end;
+
+  readln;
+
+  // Liberação de memória
+  Brasil.Free;
+  Argentina.Free;
+  Chile.Free;
+  AmericaDoSul.Free;
+end.
+

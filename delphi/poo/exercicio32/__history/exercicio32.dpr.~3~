@@ -1,0 +1,41 @@
+program exercicio32;
+
+{$APPTYPE CONSOLE}
+
+{$R *.res}
+
+uses
+  System.SysUtils,
+  Pais in 'Pais.pas';
+
+var
+  Brasil, Argentina: TPais;
+begin
+  try
+    // Criação dos objetos TPais
+    Brasil := TPais.Create('BRA', 'Brasil', 8515767.049);
+    Brasil.Populacao := 193946886;
+    Writeln('Pais: ', Brasil.Nome);
+    Writeln('Populacao: ', Brasil.Populacao:0:0);
+    Writeln('Dimensao: ', Brasil.Dimensao:0:2);
+    Writeln('Densidade Populacional: ', Brasil.VerificarDensidadePop:0:2);
+
+    // Criação de outro país
+    Argentina := TPais.Create('ARG', 'Argentina', 2780400);
+    Argentina.Populacao := 43131966;
+    Writeln('Pais: ', Argentina.Nome);
+    Writeln('Populacao: ', Argentina.Populacao:0:0);
+    Writeln('Dimensao: ', Argentina.Dimensao:0:2);
+    Writeln('Densidade Populacional: ', Argentina.VerificarDensidadePop:0:2);
+
+    // Verificar igualdade dos códigos ISO
+    if Brasil.VerificarIgualdade(Argentina) then
+      Writeln('Brasil e Argentina tem o mesmo codigo ISO.')
+    else
+      Writeln('Brasil e Argentina tem codigos ISO diferentes.');
+  finally
+
+  end;
+  readln;
+end.
+

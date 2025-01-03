@@ -1,0 +1,106 @@
+unit Continente;
+
+interface
+
+uses
+  Pais;
+
+type TContinente = class
+      private
+        Fnome : string;
+        FListaPaises : array [1..10] of TPais;
+      public
+        constructor Create(ANome : string);
+        procedure AdicionarPais(APais : TPais);
+        function DimensaoTotal : real;
+        function PopulacaoTotal : real;
+        function DensidadePopulacional : real;
+        function PaisMaiorPopulacao : TPais;
+        function PaisMenorPopulacao : TPais;
+        function PaisMaiorDimensao : TPais;
+        function PaisMenorDimensao : TPais;
+        function DiferencaMenorMaiorPais : real;
+
+
+end;
+
+implementation
+
+{ TContinente }
+
+procedure TContinente.AdicionarPais(APais: TPais);
+var
+  i: integer;
+begin
+  i := Low(FListaPaises);
+
+  // Encontre o primeiro índice vazio no array
+  while (i <= High(FListaPaises)) and (FListaPaises[i] <> nil) do
+    i := i + 1;
+
+  if i <= High(FListaPaises) then
+    FListaPaises[i] := APais;
+
+end;
+
+
+constructor TContinente.Create(ANome: string);
+begin
+
+  FNome := ANome;
+
+end;
+
+function TContinente.DensidadePopulacional: real;
+var
+  i: integer;
+  densidade: real;
+begin
+
+  densidade := 0;
+
+  for i := Low(FListaPaises) to High(FListaPaises) do
+  begin
+    densidade := densidade + FListaPaises[i].VerificarDensidadePop;
+  end;
+
+  Result := densidade;
+
+end;
+
+function TContinente.DiferencaMenorMaiorPais: real;
+begin
+
+end;
+
+function TContinente.DimensaoTotal: real;
+begin
+
+end;
+
+function TContinente.PaisMaiorDimensao: TPais;
+begin
+
+end;
+
+function TContinente.PaisMaiorPopulacao: TPais;
+begin
+
+end;
+
+function TContinente.PaisMenorDimensao: TPais;
+begin
+
+end;
+
+function TContinente.PaisMenorPopulacao: TPais;
+begin
+
+end;
+
+function TContinente.PopulacaoTotal: real;
+begin
+
+end;
+
+end.

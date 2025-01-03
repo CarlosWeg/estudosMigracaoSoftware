@@ -1,0 +1,23 @@
+unit ProfessorHora;
+
+interface
+
+uses
+  Professor;
+
+type
+  TProfessorHora = class(Professor)
+    public
+      function CalculaSalario : real ; override;
+  end;
+
+implementation
+
+{ TProfessorHora }
+
+function TProfessorHora.CalculaSalario: real;
+begin
+
+end;
+
+end.

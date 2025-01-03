@@ -1,0 +1,33 @@
+program exercicio31;
+
+{$APPTYPE CONSOLE}
+
+uses
+  System.SysUtils,
+  Professor in 'Professor.pas',
+  ProfessorHora in 'ProfessorHora.pas',
+  ProfessorRegime in 'ProfessorRegime.pas';
+
+var
+  PRegime: TProfessorRegime;
+  PHora: TProfessorHora;
+
+begin
+  try
+    PRegime := TProfessorRegime.Create('123', 'Lucas', 1500);
+    PHora := TProfessorHora.Create('125', 'Augusto', 50, 7);
+
+    Writeln('Professor em Regime:');
+    Writeln('Salário: ', PRegime.CalculaSalario:0:2);
+    Writeln;
+
+    Writeln('Professor Horista:');
+    Writeln('Salário: ', PHora.CalculaSalario:0:2);
+
+  finally
+    PRegime.Free;
+    PHora.Free;
+  end;
+  readln;
+end.
+

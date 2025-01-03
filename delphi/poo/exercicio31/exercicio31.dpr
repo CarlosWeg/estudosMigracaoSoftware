@@ -1,0 +1,44 @@
+program exercicio31;
+
+//Leia o enunciado abaixo e realize a abstração das informações em classes
+//(Você deverá utilizar o conceito de herança e classe abstrata na solução):
+
+//Os professores podem trabalhar “em regime”, cuja carga horária é fixa de 40
+//horas, e “horistas” cuja carga horária pode variar de semestre a semestre. Todo
+//professor possui um número de matrícula, um nome, uma carga horária e um
+//salário. O salário de um professor em regime é fixo, enquanto o salário de um
+//professor horista depende do número de horas trabalhadas e do salário/hora.
+//Deve existir um método calculaSalario que deve retornar o valor do salário do
+//professor.
+
+{$APPTYPE CONSOLE}
+
+uses
+  System.SysUtils,
+  Professor in 'Professor.pas',
+  ProfessorHora in 'ProfessorHora.pas',
+  ProfessorRegime in 'ProfessorRegime.pas';
+
+var
+  PRegime: TProfessorRegime;
+  PHora: TProfessorHora;
+
+begin
+  try
+    PRegime := TProfessorRegime.Create('123', 'Lucas', 1500);
+    PHora := TProfessorHora.Create('125', 'Augusto', 50, 7);
+
+    Writeln('Professor em Regime:');
+    Writeln('Salário: ', PRegime.CalculaSalario:0:2);
+    Writeln;
+
+    Writeln('Professor Horista:');
+    Writeln('Salário: ', PHora.CalculaSalario:0:2);
+
+  finally
+    PRegime.Free;
+    PHora.Free;
+  end;
+  readln;
+end.
+

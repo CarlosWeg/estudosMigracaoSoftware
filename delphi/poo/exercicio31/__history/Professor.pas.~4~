@@ -1,0 +1,31 @@
+unit Professor;
+
+interface
+
+type
+  TProfessor = class
+  private
+    FMatricula : string;
+    FNome : string;
+    FCargaHoraria : real;
+    FSalario: real;
+  public
+    constructor Create(AMatricula, ANome: string;
+    ACargaHoraria : real); virtual;
+    function CalculaSalario: real; virtual; abstract;
+  end;
+
+implementation
+
+{ TProfessor }
+
+constructor TProfessor.Create(AMatricula, ANome: string; ACargaHoraria : real);
+begin
+
+  FMatricula := AMatricula;
+  FNome := ANome;
+  FCargaHoraria := ACargaHoraria;
+
+end;
+
+end.
